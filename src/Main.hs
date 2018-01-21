@@ -17,10 +17,10 @@ api = Proxy
 
 server :: Application
 server = serve api fibHandler
-  where fibHandler maybeN
-          | Just n <- maybeN, n > 0
+  where fibHandler n
+          | n >= 0
           = return $ object ["n" .= n, "fib" .= fib n]
-          | otherwise = throwError $ err412 { errBody = "Precondition Failed: n > 0" }
+          | otherwise = throwError $ err412 { errBody = "Precondition Failed: n >= 0" }
 
 main :: IO ()
 main = run 9000 server
