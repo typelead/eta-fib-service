@@ -5,7 +5,7 @@ import Servant.Server
 import Data.Aeson
 import Network.Wai.Servlet.Handler.Jetty
 
-type API = "fib" :> Capture "n" Int :> Get '[JSON] Value
+type API = "fibonacci" :> Capture "n" Int :> Get '[JSON] Value
 
 fib :: Int -> Int
 fib 0 = 1
