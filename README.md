@@ -3,7 +3,6 @@
 This repository hosts the code for the fibonacci service example in the Web Service tutorial.
 
 ```
-etlas install --dependencies-only
 etlas run
 ```
 
